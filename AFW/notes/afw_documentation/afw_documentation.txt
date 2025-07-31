@@ -1,0 +1,77 @@
+# Messages
+Provides a flexible, decoupled way to communicate between systems using named messages and scoped callbacks.  
+
+**AFW.message_broadcast(message, args)**  
+Broadcasts a named message to all registered callbacks, passing optional arguments to each.
+
+**AFW.message_attach_callback(message, script, scope, priority)**  
+Registers a callback function to run when a specific message is broadcast; callbacks can be scoped and prioritized.
+
+**AFW.message_detach_callback(handle)**  
+Removes a previously attached message callback using the handle returned by message_attach_callback.   
+
+# Timesteps  
+Defines custom fixed-rate update loops that dispatch timed messages independently from the built-in game step event.
+
+**AFW.timestep_create(name, hertz)**  
+Creates a new timestep with the given name and frequency (in hertz) for updates.
+
+**AFW.timestep_exists(name)**  
+Checks if a timestep with the specified name exists.
+
+**AFW.timestep_destroy(name)**  
+Destroys the timestep identified by the given name.
+
+**AFW.timestep_get_timescale(name)**  
+Returns the current timescale multiplier for the specified timestep.
+
+**AFW.timestep_set_timescale(name, timescale)**  
+Sets the timescale multiplier for the specified timestep, affecting update speed.
+
+**AFW.timestep_get_rate(name)**  
+Returns the updates per second considering both timesteps' hertz and timescale
+
+# Storage
+Manages structured data saved to and loaded from files, with optional messaging to notify when properties change or data reloads.
+
+**AFW.storage_define(name, filepath)**  
+Defines a new storage data object with a unique name and file path for saving/loading.
+
+**AFW.storage_get_property(name, property)**  
+Retrieves the value of a specific property from the named storage object.
+
+**AFW.storage_set_property(name, property, value)**  
+Sets the value of a specific property in the named storage object and optionally broadcasts a change message.
+
+**AFW.storage_load(name)**  
+Loads the storage data from its associated file, updating properties accordingly.
+
+**AFW.storage_save(name)**  
+Saves the current storage properties to its associated file in JSON format.
+
+# Inputs
+Maps player actions to keyboard keys or storage properties and tracks their states globally or within specified timesteps.
+
+**AFW.input_define(action)**  
+Defines a new input action to track.
+
+**AFW.input_bind_to_key(action, key)**  
+Binds a defined action to a specific keyboard key.
+
+**AFW.input_bind_to_storage(action, name, property)**  
+Binds a defined action to a storage property; requires storage broadcasting to be enabled.
+
+**AFW.input_add_poll_on_timestep(timestep_name)**  
+Adds input polling on a named timestep to update action states regularly.
+
+**AFW.input_remove_poll_on_timestep(timestep_name)**  
+Removes input polling from a named timestep.
+
+**AFW.input_is_held(action, timestep_name = undefined)**  
+Returns true if the action is currently held down, optionally within a specific timestep.
+
+**AFW.input_is_pressed(action, timestep_name = undefined)**  
+Returns true if the action was pressed (just transitioned to held) in the current polling frame.
+
+**AFW.input_is_released(action, timestep_name = undefined)**  
+Returns true if the action was released (just transitioned from held to not held) in the current polling frame.

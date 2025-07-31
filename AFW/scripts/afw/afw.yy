@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"afw",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"afw",
+  "parent":{
+    "name":"afw",
+    "path":"folders/afw.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

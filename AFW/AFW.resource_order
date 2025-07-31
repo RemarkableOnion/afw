@@ -1,0 +1,10 @@
+{
+  "FolderOrderSettings":[
+    {"name":"afw","order":7,"path":"folders/afw.yy",},
+  ],
+  "ResourceOrderSettings":[
+    {"name":"afw_documentation","order":1,"path":"notes/afw_documentation/afw_documentation.yy",},
+    {"name":"obj_demo","order":8,"path":"objects/obj_demo/obj_demo.yy",},
+    {"name":"rm_demo","order":6,"path":"rooms/rm_demo/rm_demo.yy",},
+  ],
+}

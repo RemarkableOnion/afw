@@ -1,0 +1,11 @@
+{
+  "$GMNotes":"",
+  "%Name":"afw_documentation",
+  "name":"afw_documentation",
+  "parent":{
+    "name":"afw",
+    "path":"folders/afw.yy",
+  },
+  "resourceType":"GMNotes",
+  "resourceVersion":"2.0",
+}
